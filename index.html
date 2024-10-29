@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Día de Muertos</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(to bottom right, #121212, #333);
+            color: white;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        header {
+            background: #FF6F00;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            transition: background 0.3s;
+            animation: fadeIn 0.5s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        nav {
+            margin: 20px 0;
+        }
+        nav a {
+            margin: 0 15px;
+            color: white; /* Texto en blanco */
+            text-decoration: none;
+            transition: color 0.3s, transform 0.3s;
+            font-weight: 700;
+            padding: 10px; 
+            border-radius: 5px; 
+        }
+        nav a:hover {
+            color: #FFD54F;
+            transform: scale(1.1);
+            background: rgba(255, 255, 255, 0.1);
+        }
+        section {
+            padding: 40px 20px;
+            margin: 20px;
+            background: rgba(68, 68, 68, 0.9);
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            transform: translateY(20px);
+            opacity: 0;
+            animation: slideIn 0.5s forwards;
+            cursor: pointer;
+            transition: transform 0.3s, background-color 0.3s;
+        }
+        section h2, section p {
+            color: white; /* Asegurando que los textos de las secciones sean blancos */
+        }
+        section:hover {
+            transform: translateY(-5px);
+            background-color: #FFD54F;
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.4);
+        }
+        @keyframes slideIn {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            transition: transform 0.3s, filter 0.3s; 
+            border: 3px solid #FFD54F;
+        }
+        img:hover {
+            transform: scale(1.05);
+            filter: brightness(1.1);
+            border-color: white;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #333;
+            color: white;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.5);
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Día de Muertos</h1>
+    <nav>
+        <a href="#origen">Origen</a>
+        <a href="#tradiciones">Tradiciones</a>
+        <a href="#ofrendas">Ofrendas</a>
+        <a href="#galeria">Galería</a>
+    </nav>
+</header>
+
+<section id="origen" onclick="window.location.href='https://es.wikipedia.org/wiki/D%C3%ADa_de_muertos';">
+    <h2>Origen del Día de Muertos</h2>
+    <p>El Día de Muertos es una celebración mexicana que honra a los seres queridos que han fallecido. Se celebra principalmente el 1 y 2 de noviembre y combina tradiciones indígenas con influencias católicas.</p>
+    <img src="img/imagen día de muertos 1.jpeg" alt="Celebración del Día de Muertos">
+</section>
+
+<section id="tradiciones" onclick="window.location.href='https://es.wikipedia.org/wiki/D%C3%ADa_de_muertos#Tradiciones';">
+    <h2>Tradiciones</h2>
+    <p>Las tradiciones del Día de Muertos incluyen la creación de altares, la visita a los cementerios, y la preparación de comidas y bebidas que eran favoritas de los difuntos.</p>
+    <img src="img/imagen día de muertos 2.jpeg" alt="Altares de Día de Muertos">
+</section>
+
+<section id="ofrendas" onclick="window.location.href='https://es.wikipedia.org/wiki/Ofrenda';">
+    <h2>Ofrendas</h2>
+    <p>Las ofrendas son una parte esencial de esta celebración. Incluyen elementos como flores de cempasúchil, velas, fotos de los difuntos, y alimentos como pan de muerto.</p>
+    <img src="img/imagen día de muertos 3.jpeg" alt="Ofrenda de Día de Muertos">
+</section>
+
+<section id="galeria" onclick="window.location.href='https://es.wikipedia.org/wiki/D%C3%ADa_de_muertos#Galería';">
+    <h2>Galería</h2>
+    <img src="img/imagen día de muertos 4.jpeg" alt="Galería 1">
+    <img src="img/imagen día de muertos 5.jpeg" alt="Galería 2">
+    <img src="img/imagen día de muertos 6.jpeg" alt="Galería 3">
+</section>
+
+<footer>
+    <p>&copy; 2024 Día de Muertos. Todos los derechos reservados.</p>
+</footer>
+
+<script>
+    document.querySelectorAll('section').forEach((section, index) => {
+        section.style.animationDelay = `${index * 0.2}s`;
+        section.style.opacity = 1; // Activar el efecto de desvanecimiento
+    });
+</script>
+
+</body>
+</html>
